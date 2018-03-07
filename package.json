@@ -1,0 +1,23 @@
+{
+  "name": "zero-hunger-api",
+  "version": "1.0.0",
+  "description": "REST API for the zero-hunger open source app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arturogonzalezp/zero-hunger-api.git"
+  },
+  "author": "César Arturo González",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arturogonzalezp/zero-hunger-api/issues"
+  },
+  "homepage": "https://github.com/arturogonzalezp/zero-hunger-api#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
