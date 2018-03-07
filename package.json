@@ -19,5 +19,8 @@
   "homepage": "https://github.com/arturogonzalezp/zero-hunger-api#readme",
   "dependencies": {
     "express": "^4.16.2"
+  },
+  "engines": {
+    "node": "6.11.1"
   }
 }
