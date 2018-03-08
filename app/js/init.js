@@ -16,6 +16,11 @@ String.prototype.replaceAll = function (search, replacement) {
       var returnObject = {};
       var files = $("#file-source")[0].files;
 
+
+      var accept = {
+        application : ["application/zip"]
+      };
+
       var r = new FileReader();
       
       r.onload = function () { 
@@ -27,7 +32,10 @@ String.prototype.replaceAll = function (search, replacement) {
   
         console.log(returnObject);
       };
-      r.readAsBinaryString(files[0]);
+
+      if (accept.application.indexOf(files[0].type) > -1) {
+        r.readAsBinaryString(files[0]);
+      }
 
     });
 
