@@ -1,22 +1,48 @@
-String.prototype.replaceAll = function(search, replacement) {
+String.prototype.replaceAll = function (search, replacement) {
   var target = this;
   return target.replace(new RegExp(search, 'g'), replacement);
 };
-(function($){
-  $(function(){
+(function ($) {
+  $(function () {
 
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
-    $('#upload-button').click(function(event){
-      $(this).attr("disabled","true");
+    $('#upload-button').click(function (event) {
+      $(this).attr("disabled", "true");
       Materialize.toast("Uploaded idea");
     });
-    $("#")
+    $("#upload-button").click(function (event) {
+
+      var returnObject = {};
+      var files = $("#file-source")[0].files;
+
+
+      var accept = {
+        application : ["application/zip"]
+      };
+
+      var r = new FileReader();
+      
+      r.onload = function () { 
+        returnObject = {
+          id: $("#tutorial-id").val(),
+          title: $("#tutorial-title").val(),
+          content: r.result
+        };
+  
+        console.log(returnObject);
+      };
+
+      if (accept.application.indexOf(files[0].type) > -1) {
+        r.readAsBinaryString(files[0]);
+      }
+
+    });
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
 
-function updateId(){
+function updateId() {
   var title = $("#tutorial-title").val();
   $("#tutorial-id").val(title.toLowerCase().replaceAll(" ", "-"));
 }
