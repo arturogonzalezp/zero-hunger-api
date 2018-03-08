@@ -1,0 +1,89 @@
+// Colors
+@color-red: #ffc09f;
+@color-yellow: #ffee93;
+@color-white: #fcf5c7;
+@color-blue: #a0ced9;
+@color-green: #adf7b6;
+
+.btn{
+    background-color: @color-green;
+    color: #000;
+    &:hover{
+        color: #000;
+        background-color: @color-green;
+    }
+}
+
+body {
+    color: #000;
+}
+nav ul a,
+nav .brand-logo {
+  color: #000;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: @color-green;
+}
+
+.parallax-container {
+  min-height: 400px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+  .parallax {
+      img{
+        filter: brightness(50%);
+      }
+  }
+  .section {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+#upload-button{
+    background-color: @color-green;
+    color: #000;
+}
+.page-footer{
+    background-color: @color-green;
+    .footer-copyright{
+        color: #000;
+    }
+}
+input[type=text]{
+    &:not(.browser-default){
+        color: #000;
+    }
+
+}
