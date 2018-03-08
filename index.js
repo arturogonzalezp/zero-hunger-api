@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 var bodyParser = require("body-parser");
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 8080;
 const version = "1.0.0";
 const projectName = "Zero Hunger";
 
