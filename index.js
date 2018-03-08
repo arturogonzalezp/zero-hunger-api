@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
     database: process.env.DB_SCHEME
 });
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 80;
 const version = "1.0.0";
 const projectName = "Zero Hunger";
 
@@ -48,12 +48,11 @@ app.get('/get/tutorials', (req, res) => {
     });
 });
 app.post('/post/tutorial', (req, res) => {
+    console.log("Post tutorial");
     var params = req.body;
-    connection.query("INSERT INTO tutorial (id,title,content) VALUES ('" + params.id + "', '" + params.title + "', '" + params.content + "')", function (error, results, fields) {
+    connection.query("INSERT INTO tutorial SET ?", params, function (error, results, fields) {
         if (error) {
-            res.send(new JsonStructure("ERROR", {
-                message: "The app is already registered"
-            }));
+            throw error;
         } else {
             res.send(new JsonStructure("OK", {
                 message: "Everything is cool"

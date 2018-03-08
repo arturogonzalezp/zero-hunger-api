@@ -7,42 +7,46 @@ String.prototype.replaceAll = function (search, replacement) {
 
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
-    $('#upload-button').click(function (event) {
-      $(this).attr("disabled", "true");
-      Materialize.toast("Uploaded idea");
-    });
     $("#upload-button").click(function (event) {
-
+      $(this).attr("disabled", "true");
       var returnObject = {};
       var files = $("#file-source")[0].files;
 
 
       var accept = {
-        application : ["application/zip"]
+        application: ["application/zip"]
       };
 
       var r = new FileReader();
-      
-      r.onload = function () { 
+
+      r.onload = function () {
         returnObject = {
           id: $("#tutorial-id").val(),
           title: $("#tutorial-title").val(),
-          content: r.result
+          imageUrl: $("#image-url").val(),
+          content: new String(r.result)
         };
-  
-        console.log(returnObject);
+        postToServer(returnObject,function(result){
+          Materialize.toast("Uploaded idea", 4000);
+          $(this).attr("disabled", "true");
+        });
       };
-
-      if (accept.application.indexOf(files[0].type) > -1) {
-        r.readAsBinaryString(files[0]);
-      }
+      r.readAsBinaryString(files[0]);
 
     });
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
-
 function updateId() {
   var title = $("#tutorial-title").val();
   $("#tutorial-id").val(title.toLowerCase().replaceAll(" ", "-"));
+}
+function postToServer(object, callback) {
+  $.post("http://localhost/post/tutorial",object)
+    .done(function (result) {
+      callback(result);
+    })
+    .fail(function () {
+      Materialize.toast("ERROR", 4000);
+    });
 }
