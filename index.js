@@ -2,13 +2,12 @@ const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
 const mysql = require('mysql');
-const dotenv = require('dotenv').config();
 
 var connection = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_SCHEME
+    host: "imcesar.com",
+    user: "zerohungermaster",
+    password: "zero1029384756",
+    database: "zerohunger"
 });
 
 const port = process.env.PORT || 80;
