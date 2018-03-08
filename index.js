@@ -25,10 +25,15 @@ app.get('/get/jsontest', (req, res) => {
             imageUrl: "https://vignette.wikia.nocookie.net/frontierville/images/8/87/Pear_Tree_Big-icon.png/revision/latest?cb=20100619224756"
         });
     }
-    res.send(arr);
+    res.send(new JsonStructure("OK",arr));
 });
 app.get('*', (req, res) => {
     res.sendFile(__dirname + '/app/index.html');
 });
 
 app.listen(port, () => console.log('Example app listening on port ' + port + '!'));
+
+function JsonStructure(status, result) {
+    this.status = status;
+    this.result = result;
+}
