@@ -42,7 +42,7 @@ function updateId() {
   $("#tutorial-id").val(title.toLowerCase().replaceAll(" ", "-"));
 }
 function postToServer(object, callback) {
-  $.post("http://localhost/post/tutorial",object)
+  $.post("https://zero-hunger-api.herokuapp.com/post/tutorial",object)
     .done(function (result) {
       callback(result);
     })
