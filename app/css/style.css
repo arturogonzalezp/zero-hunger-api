@@ -1,0 +1,69 @@
+.btn {
+  background-color: #adf7b6;
+  color: #000;
+}
+.btn:hover {
+  color: #000;
+  background-color: #adf7b6;
+}
+body {
+  color: #000;
+}
+nav ul a,
+nav .brand-logo {
+  color: #000;
+}
+p {
+  line-height: 2rem;
+}
+.button-collapse {
+  color: #adf7b6;
+}
+.parallax-container {
+  min-height: 400px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+.parallax-container .parallax img {
+  filter: brightness(50%);
+}
+.parallax-container .section {
+  width: 100%;
+}
+@media only screen and (max-width: 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+footer.page-footer {
+  margin: 0;
+}
+#upload-button {
+  background-color: #adf7b6;
+  color: #000;
+}
+.page-footer {
+  background-color: #adf7b6;
+}
+.page-footer .footer-copyright {
+  color: #000;
+}
+input[type=text]:not(.browser-default) {
+  color: #000;
+}
