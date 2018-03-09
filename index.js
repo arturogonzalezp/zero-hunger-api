@@ -26,11 +26,11 @@ app.use(bodyParser.json({
 
 app.get('/get/jsontest', (req, res) => {
     let arr = [];
-    for (var i = 1; i <= 15; i++) {
+    for (var i = 1; i <= 8; i++) {
         arr.push({
             id: "test-" + (i + 1000),
             name: "Test " + i,
-            imageUrl: "https://vignette.wikia.nocookie.net/frontierville/images/8/87/Pear_Tree_Big-icon.png/revision/latest?cb=20100619224756"
+            imageUrl: "http://www.micasarevista.com/var/decoracion/storage/images/mi-casa/terraza-jardines-porche/plantas-resistentes-al-sol/1119269-1-esl-ES/12-plantas-de-sol-para-el-verano_ampliacion.jpg"
         });
     }
     res.send(new JsonStructure("OK", arr));
