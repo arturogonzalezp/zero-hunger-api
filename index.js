@@ -3,7 +3,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const mysql = require('mysql');
 
-var connection = mysql.createConnection({
+var connection = mysql.createPool({
+    connectionLimit: 5,
     host: "imcesar.com",
     user: "zerohungermaster",
     password: "zero1029384756",
@@ -36,7 +37,7 @@ app.get('/get/jsontest', (req, res) => {
     res.send(new JsonStructure("OK", arr));
 });
 app.get('/get/tutorials', (req, res) => {
-    connection.query("SELECT * FROM tutorial", function (error, results, fields) {
+    connection.query("SELECT * FROM tutorial ORDER BY db_id", function (error, results, fields) {
         if (error) {
             res.send(new JsonStructure("ERROR", {
                 message: "Everything is in caos, call the system admin"
