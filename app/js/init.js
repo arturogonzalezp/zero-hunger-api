@@ -28,7 +28,7 @@ String.prototype.replaceAll = function (search, replacement) {
         };
         postToServer(returnObject,function(result){
           Materialize.toast("Uploaded idea", 4000);
-          $(this).attr("disabled", "true");
+          $(this).attr("disabled", "false");
         });
       };
       r.readAsBinaryString(files[0]);

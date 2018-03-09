@@ -5,6 +5,15 @@
 @color-blue: #a0ced9;
 @color-green: #adf7b6;
 
+@font-face {
+  font-family: BebasNueue;
+  src: url(../fonts/BebasNeue-Regular.ttf);
+}
+@font-face {
+  font-family: UniSansLight;
+  src: url(../fonts/UniSansLight.otf);
+}
+
 .btn{
     background-color: @color-green;
     color: #000;
@@ -16,6 +25,7 @@
 
 body {
     color: #000;
+    font-family: BebasNueue;
 }
 nav ul a,
 nav .brand-logo {
@@ -23,7 +33,8 @@ nav .brand-logo {
 }
 
 p {
-  line-height: 2rem;
+  line-height: 1.5rem;
+  font-family: UniSansLight;
 }
 
 .button-collapse {
@@ -76,7 +87,7 @@ footer.page-footer {
     color: #000;
 }
 .page-footer{
-    background-color: @color-green;
+    background-color: @color-yellow;
     .footer-copyright{
         color: #000;
     }
@@ -85,5 +96,7 @@ input[type=text]{
     &:not(.browser-default){
         color: #000;
     }
-
+}
+input{
+  font-family: UniSansLight;
 }
